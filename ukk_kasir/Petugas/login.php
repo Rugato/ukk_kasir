@@ -4,12 +4,10 @@ include "../koneksi/connect.php";
 error_reporting(0);
 session_start();
 
-// Pengecekan apakah pengguna sudah login
 if(isset($_SESSION['NamaUser'])) {
-    header("Location: index.php"); // Redirect ke halaman index.php jika sudah login
+    header("Location: index.php");
     exit;
 }
-
 if (isset($_POST['submit'])) {
   $NamaUser = $_POST['NamaUser'];
   $Password = md5($_POST['Password']);
@@ -25,11 +23,9 @@ if (isset($_POST['submit'])) {
           header("Location: index.php");
           exit;
       } else {
-          // Password salah
           echo "<script>alert('Wrong Password. Try again!')</script>";
       }
   } else {
-      // Username tidak ditemukan
       echo "<script>alert('Username not found!')</script>";
   }
 }

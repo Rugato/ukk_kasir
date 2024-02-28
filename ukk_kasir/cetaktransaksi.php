@@ -5,7 +5,7 @@ include("Bootstrap/header.php");
   <div class="p-4 col-6">
     <div class="card mt-5">
       <div class="card-body">
-        <a href="daftar-transaksi.php" class="btn btn-primary mb-3">Kembali</a>
+        <a href="index.php" class="btn btn-warning mb-3">Menu</a>
         <table class="table table-bordered">
           <thead>
             <tr>
@@ -48,17 +48,14 @@ include("Bootstrap/header.php");
                   </thead>
                   <tbody>
                     <?php
-                    // Fetch details for the current Penjualan
                     $query2 = "SELECT ProdukID, PenjualanID, JumlahProduk, Subtotal FROM detailpenjualan WHERE DetailID = '" . $row['PenjualanID'] . "'";
                     $result2 = mysqli_query($conn, $query2);
 
-                    // Inisialisasi total harga
                     $totalHarga = 0;
 
                     while ($detailrow = mysqli_fetch_assoc($result2)) {
                       echo "<tr>";
                       
-                      // Fetch NamaProduk
                       $query3 = "SELECT NamaProduk FROM produk WHERE ProdukID = '" . $detailrow['ProdukID'] . "' ";
                       $result3 = mysqli_query($conn, $query3);
 
@@ -70,12 +67,10 @@ include("Bootstrap/header.php");
                       echo "<td>RP." . $detailrow['Subtotal'] . "</td>";
                       echo "</tr>";
 
-                      // Tambahkan Subtotal ke total harga
                       $totalproduk = $detailrow['JumlahProduk'] * $detailrow['Subtotal'];
                       $totalHarga += $totalproduk;
                     }
 
-                    // Menampilkan total harga diluar loop
                     echo "<tr>";
                     echo "<td colspan='2'><strong>Total Harga:</strong></td>";
                     echo "<td colspan='2'><strong>RP." . $totalHarga . ",00</strong></td>";

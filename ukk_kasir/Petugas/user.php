@@ -12,7 +12,7 @@
         <th>Password</th>
         <th>Level</th>
         <?php if ($_SESSION['Level'] == "Admin") { ?>
-            <th>Pilihan</th>
+            <th>Opsi</th>
             <?php } ?>
             </tr>
         </thead>

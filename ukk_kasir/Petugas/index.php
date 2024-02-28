@@ -17,21 +17,17 @@ if ($_SESSION['NamaUser'] == "") {
     <script src="../Bootstrap/jquery.min.js"></script>
     <script src="../Bootstrap/bootstrap.min.js"></script>
     <style>
-        /* Set height of the grid so .sidenav can be 100% (adjust) */
         .row.content {height: 40%}
-        
-        /* Set gray background color and 100% height */
+
         .sidenav {
             background-color: #adb5bd;
             height: 100%;
         }
 
-        /* Change color of the text */
         .sidenav ul.nav li a {
-            color: black; /* Change to your desired color */
+            color: black;
         }
             
-        /* On small screens, set height to 'auto' for the grid */
         @media screen and (max-width: 767px) {
         .row.content {height: auto;} 
         }
@@ -49,8 +45,9 @@ if ($_SESSION['NamaUser'] == "") {
         <li><a href="?page=stok">Stock</a></li>
         <li><a href="?page=user">User</a></li>
         <hr class="sidebar-divider">
+        <li><a href="../index.php">Customer Page</a></li><br>
         <div style="position: absolute; bottom: 10px, left 10px;">
-        <li><a class="btn btn-danger btn-md" href="logout.php">Log Out</a></li>
+            <li><a class="btn btn-danger btn-md" href="logout.php">Log Out</a></li>
         </div>
       </ul><br>
     </div>
@@ -103,7 +100,7 @@ if ($_SESSION['NamaUser'] == "") {
                         break;
 
                     default:
-                        # code...
+                        
                         break;
                 }
             }
@@ -115,5 +112,19 @@ if ($_SESSION['NamaUser'] == "") {
   </div>
 </div>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<footer style="background-color: #ADD8E6; color: black; padding: 10px; text-align: center;">
+    <p>Copyright &copy; <?php echo date("Y"); ?> Adriel. All Rights Reserved</p>
+</footer>
 </body>
 </html>
+</body>
+</html>
+

@@ -1,14 +1,11 @@
 <?php
 include("../koneksi/connect.php");
     $ProdukID = $_GET['ProdukID']; 
-    // Retrieve user data based on ID
     $result = mysqli_query($conn, "SELECT * FROM produk WHERE ProdukID='$ProdukID'");
     $row = mysqli_fetch_assoc($result);
-
     if(!$row) {
         die("Error: Data not found.");
     }
-    // Update user data
     if(isset($_POST['update'])) {
         $NamaProduk = mysqli_real_escape_string($conn, $_POST['NamaProduk']);
         $Harga = mysqli_real_escape_string($conn, $_POST['Harga']);
@@ -49,8 +46,8 @@ include("../koneksi/connect.php");
                                 </div>
                             </div>
                             <div class="form-group">
-                                <input type="submit" name="update" class="btn btn-md btn-primary" value="update">
-                                <input type="submit" href="?page=stok" class="btn btn-md btn-danger" value="kembali">
+                                <input type="submit" name="update" class="btn btn-md btn-primary" value="Update">
+                                <a href="?page=stok" class="btn btn-md btn-danger">Kembali</a>
                             </div>
                     </div>
                 </div>

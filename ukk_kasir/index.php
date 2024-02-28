@@ -41,7 +41,7 @@ include("Bootstrap/header.php");
                     <a class="btn btn" href="index.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="btn btn" href="transaksi.php"> + Transaksi</a>
+                    <a class="btn btn" href="transaksi.php"> Checkout</a>
                 </li>
                 <li class="nav-item">
                     <a class="btn btn" href="Petugas/login.php"><span style="color: #fc007e;">!Admin!</span></a>
@@ -76,6 +76,10 @@ include("Bootstrap/header.php");
         ?>
     </div>
 </div>
+
+<?php
+include("Bootstrap/footer.php");
+?>
 
 </body>
 </html>

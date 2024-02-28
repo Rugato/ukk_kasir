@@ -34,7 +34,7 @@
                             </div>
                             <div class="form-group">
                                 <input type="submit" name="simpan" class="btn btn-md btn-success" value="Simpan">
-                                <input type="submit" href="?page=stok" class="btn btn-md btn-danger" value="Kembali">
+                                <a href="?page=stok" class="btn btn-md btn-danger">Kembali</a>
                             </div>
 
                             <?php 
@@ -59,7 +59,6 @@
                                     
                                     $uploadOk = 1;
 
-                                   // File upload handling
                                     if (isset($_FILES["foto"]) && $_FILES["foto"]["error"] == 0) {
                                         if (move_uploaded_file($_FILES["foto"]["tmp_name"], $targetfile)) {
                                             $sql = "INSERT INTO produk (NamaProduk, Harga, Stok, Foto) VALUES ('$nama', '$harga', $stok, '$filename')";

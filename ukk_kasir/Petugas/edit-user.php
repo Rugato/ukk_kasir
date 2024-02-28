@@ -3,7 +3,6 @@ include("../koneksi/connect.php");
 
     $UserID = $_GET['UserID'];
     
-    // Retrieve user data based on ID
     $result = mysqli_query($conn, "SELECT * FROM user WHERE UserID='$UserID'");
     $row = mysqli_fetch_assoc($result);
 
@@ -11,7 +10,6 @@ include("../koneksi/connect.php");
         die("Error: Data not found.");
     }
 
-    // Update user data
     if(isset($_POST['update'])) {
         $NamaUser = mysqli_real_escape_string($conn, $_POST['NamaUser']);
         $Password = md5(mysqli_real_escape_string($conn, $_POST['Password']));
@@ -28,7 +26,6 @@ include("../koneksi/connect.php");
 
 ?>
 
-<!-- Form HTML for Edit -->
 <div class="row">
     <center>
         <h2>Edit Petugas</h2>

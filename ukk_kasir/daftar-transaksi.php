@@ -8,13 +8,13 @@ include("Bootstrap/header.php");
 </style>
 
 <body>
-      <nav class="navbar navbar-expand-lg navbar-primary bg-primary fixed-top">
+      <nav class="navbar navbar-expand-lg navbar-primary bg-warning fixed-top">
         <div class="container-fluid">
-            <a href="index.php" class="btn btn-md btn-primary float-end">Menu</a>
+            <a href="index.php" class="btn btn-md btn-warning float-end">Menu</a>
             <div class="navbar-collapse">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                    <a href="transaksi.php" class="btn btn-md btn-primary float-end">+ Transaksi</a>
+                    <a href="transaksi.php" class="btn btn-md btn-warning float-end">Beli lagi</a>
                     </li>
                 </ul>
             </div>
@@ -63,11 +63,8 @@ include("Bootstrap/header.php");
                         </thead>
                         <tbody>
                         <?php
-                          // Fetch details for the current Penjualan
                           $sql3 = $conn->query("SELECT * FROM detailpenjualan WHERE DetailID = '" . $data['PenjualanID'] . "'");
-                            
                           $totalharga = 0;
-
                           while ($data3= $sql3->fetch_assoc()) {
                         ?>
                             <tr>
@@ -113,3 +110,6 @@ include("Bootstrap/header.php");
         </div>
 </body>
 
+<?php
+include("Bootstrap/footer.php");
+?>

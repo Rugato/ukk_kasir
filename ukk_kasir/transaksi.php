@@ -26,13 +26,12 @@
             }
         }
         if ($stok) {
-        // Menyisipkan data ke dalam tabel penjualan
         $sql_penjualan = $conn->query("INSERT INTO penjualan (TanggalPenjualan) VALUES ('$tanggal')");
-        $id_transaksi_baru = $conn->insert_id; // Menggunakan insert_id dari objek koneksi
+        $id_transaksi_baru = $conn->insert_id;
 
-        // Menyisipkan data ke dalam tabel pelanggan menggunakan nilai kunci dari tabel penjualan
+
         $sql_pelanggan = $conn->query("INSERT INTO pelanggan (PelangganID, NamaPelanggan, nomor_meja) VALUES ('$id_transaksi_baru', '$nama', '$nomeja')");
-        $id_pelanggan_baru = $conn->insert_id; // Menggunakan insert_id dari objek koneksi
+        $id_pelanggan_baru = $conn->insert_id; 
 
 
         foreach ($menu_jumlah as $i => $item) {
@@ -41,11 +40,9 @@
             $harga = $item_parts[1];
             $jumlah = $jumlah_array[$i];
 
-            // Menyisipkan data ke dalam tabel detailpenjualan dengan nilai kunci primer yang unik
             $sql3 = $conn->query("INSERT INTO detailpenjualan (DetailID, ProdukID, JumlahProduk, Subtotal) VALUES ('$id_pelanggan_baru', '$produk_id', '$jumlah', '$harga')");
-            // Periksa apakah query berhasil dijalankan
+            
             if (!$sql3) {
-                // Jika query gagal, tampilkan pesan error dan hentikan eksekusi
                 die("Error: " . $conn->error);
             }
 
@@ -62,9 +59,18 @@
         }
     ?>
 
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
     <script>
-        // Fungsi untuk menambahkan input field untuk menu
         function tambahMenu() {
             var container = document.getElementById("menuContainer");
             var newMenuInput = document.createElement("div");
@@ -92,7 +98,7 @@
         }
     </script>
 
-    <nav class="navbar navbar-expand-lg navbar-primary bg-primary fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-primary bg-warning fixed-top">
         <div class="container-fluid">
             <a class="btn btn" href="index.php">Kembali</a>
             <div class="navbar-collapse">
@@ -179,3 +185,7 @@
             }
         }
     </script>
+
+<?php
+include("Bootstrap/footer.php");
+?>
