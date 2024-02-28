@@ -33,8 +33,8 @@ include("Bootstrap/header.php");
 
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-primary fixed-top mx-auto">
-    <div class="card bg-warning container-fluid">
-        <i class="navbar-brand" href="#"><span style="color:#0d6efd">All Menus</span></i> 
+    <div class="card bg-info container-fluid">
+        <i class="navbar-brand" href="#"><span style="color:#468672">All Menus</span></i> 
         <div class="navbar-collapse">
             <ul class="navbar-nav">
                 <li class="nav-item">
@@ -50,6 +50,7 @@ include("Bootstrap/header.php");
         </div>
     </div>
 </nav>
+
 
 
 <div class="main-content">
